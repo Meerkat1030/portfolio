@@ -1,0 +1,864 @@
+body {
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Block Han Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.inner {
+    display:block;
+    width: 1100px;
+    margin: auto;
+    position: relative;
+
+
+}
+/*.summary_inner{*/
+/*    !*display: flex;*!*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*    background-image: url(/React-PortFolio/static/media/1.88d07c4d.jpg);*/
+/*    background-attachment: fixed;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    color: #fff;*/
+/*    width: 100%;*/
+/*}*/
+
+.textmiddle {
+    vertical-align: super;
+}
+
+.roundimg{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.btn {
+    width: 130px;
+    padding: 10px;
+    border: 2px solid #3C7293;
+    background-color: #3C7293;
+    border-radius: 7rem;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align:center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    transition: .4s;
+}
+.btn:hover {
+    background-color: #fff;
+    color:#529AC7;
+}
+
+
+#to-top{
+    width: 42px;
+    height: 42px;
+    background-color: #529AC7;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom:30px;
+    right:30px;
+    z-index: 9;
+}
+
+
+#to-top:hover{
+    background-color: #fff;
+    color:#529AC7;
+    transition:.3s;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video, header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    /*overflow-x: hidden;*/
+
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+    display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+    display: none;
+}
+body {
+    line-height: 1;
+}
+menu, ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* HEADER */
+
+
+header {
+    width: 100%;
+    background-color: #000;
+    /*background-color: #529AC7;*/
+    border-bottom: 1px solid #fff;
+    position: fixed;
+    top: 0;
+    z-index:9;
+    box-shadow: 10px 5px 5px 5px rgba(255, 255, 255, .2);
+}
+
+header.moved {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    position: fixed;
+    top: 0;
+    z-index:9;
+}
+
+header > .inner {
+    height: 100px;
+    margin: auto;
+
+}
+
+header .maintitle {
+    position:absolute;
+    top:10px;
+    color: #fff;
+    padding: 40px;
+    font-size:35px;
+    font-weight: 800;
+    padding: 11px 16px;
+    transition: color .4s;
+}
+
+header .maintitle.moved {
+    position:absolute;
+    top:10px;
+    color: #333;
+    padding: 40px;
+    font-size:35px;
+    font-weight: 800;
+    padding: 11px 16px;
+    transition: color .4s;
+}
+
+
+header .maintitle:hover {
+    color: #3C7293
+}
+
+header .maintitle.moved:hover {
+    color: #A7A7A7
+}
+
+header .sub-menu{
+    position: absolute;
+    top:25px;
+    right:-100px;
+    display: flex;
+}
+
+header .sub-menu ul.menu{
+    display:flex;
+}
+
+header .sub-menu ul.menu li {
+    position: relative;
+}
+
+header .sub-menu ul.menu li::before {
+
+    content:"";
+
+    width: 1px;
+    height: 12px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+header .sub-menu ul.menu li:first-child::before{
+    display:none;
+}
+
+header .sub-menu ul.menu a {
+    font-size:22px;
+    padding: 11px 16px;
+    display:block;
+    color:#fff;
+    transition: color .4s;
+}
+header .sub-menu ul.menu a.moved {
+    font-size:22px;
+    padding: 11px 16px;
+    display:block;
+    color:#333;
+    transition: color .4s;
+}
+
+header .sub-menu ul.menu li a:hover {
+    color:#3C7293;
+    transition: color .4s;
+}
+
+header .sub-menu ul.menu li a.moved:hover {
+    color:#A7A7A7;
+    transition: color .4s;
+}
+/*header end*/
+.summary {
+    position :relative;
+    /*background-color: #529AC7;*/
+    background-color: #000;
+    margin:0 auto;
+    text-align: center;
+    width: 100%;
+    outline:2px solid orange;
+}
+.summary img{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 70%;
+    top: 150px
+    /*overflow: hidden;*/
+}
+/*.summary h1{*/
+/*    text-align: center;*/
+/*}*/
+
+.summary .btn {
+    margin: 10px auto 40px auto ;
+    position: absolute;
+    bottom : 50px;
+    left: 47%;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+.summary_header{
+    font-family: Black Han Sans,sans-serif;
+    border-right: 0.1em solid white;
+    font-size: 4vw;
+    white-space: pre;
+    line-height: 1;
+    letter-spacing: 0.1rem;
+    /*padding-top: 0.2em;*/
+    /*padding-top: 40px;*/
+    margin-top: 300px;
+    width: 28ch;
+    /* ch : 25개의 문자열을 포함 */
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    /*font-family: monospace;*/
+}
+
+.summary_inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    width:100%;
+    height: 96vh;
+}
+/*summary end*/
+.aboutme {
+    position: relative;
+    background-color: #fff;
+    margin:0 auto 2rem;
+    width: 100%;
+    /* max-width: 71.25rem; */
+    padding: 4rem auto;
+    /*margin: 2 0 0 auto;*/
+}
+
+.aboutme .aboutme_header{
+    font-family: Black Han Sans,sans-serif;
+    padding: 45px 0 30px 0 ;
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+    word-break: kiip-all;
+    border-bottom: .01rem solid #fff;
+}
+
+.aboutme .aboutme_description {
+    display:flex;
+    flex-flow: row wrap;
+}
+
+.aboutme .aboutme_description .aboutme_infos{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    font-family: Noto Sans KR, sans-serif;
+    width: 100%;
+}
+
+.aboutme .aboutme_description .aboutme_infos .info_wraper{
+
+    display:flex;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.aboutme .aboutme_description .aboutme_infos .info_wraper .info_title{
+    width: 100%;
+    margin-bottom: .5rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    height: 28px;
+}
+
+.aboutme .aboutme_description .aboutme_infos .info_wraper .info_des{
+    width: 100%;
+    font-weight: 400;
+    font-size: 1rem;
+    color: inherit;
+    display: flex;
+}
+.aboutme .aboutme_description .aboutme_infos .info_wraper .info_des a{
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: inherit; /* 링크의 색상 제거 */
+}
+.aboutme .aboutme_description .aboutme_infos .info_wraper .info_des i{
+    /*text-align: center;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*!*display: block;*!*/
+    /*padding: 0 10px 0 0;*/
+    /*!*width: 150%;*!*/
+    /*!*height: 150%;*!*/
+    padding: 14px 10px 0 0;
+}
+
+
+
+
+/*.skills {*/
+/*    position: relative;*/
+/*    margin:0 auto 0;*/
+/*    width: 100%;*/
+/*    !* max-width: 71.25rem; *!*/
+/*    padding: 4rem 2rem;*/
+/*    margin: 2 0 0 auto;*/
+/*    height: 70rem;*/
+/*    background-color: #CED3DC;*/
+/*}*/
+
+.skills .skills_heeding{
+    font-family: Black Han Sans,sans-serif;
+    padding: 45px 0 30px 0 ;
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+    word-break: kiip-all;
+    border-bottom: .01rem solid #fff;
+}
+
+/*.skills .skills_container{*/
+/*    display:flex;*/
+/*    flex-flow: column wrap;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-around;*/
+/*    font-family: Noto Sans KR,sans-serif;*/
+/*}*/
+/*.skills .skills_container .skills_box{*/
+
+/*    flex-shrink: 0;*/
+/*    width: 17rem;*/
+/*    padding: 1.5rem;*/
+/*    margin: 20px;*/
+/*    border-radius: 0.7rem;*/
+/*    background-color: #fff;*/
+/*    margin-bottom: 0;*/
+/*    box-shadow: 1rem 1rem 1rem 0 rgb(68 68 68 / 20%);*/
+
+/*}*/
+
+/*.skills .skills_container .skills_box .skills_box_title{*/
+/*    padding-bottom: .5rem;*/
+/*    margin-bottom: 1.5rem;*/
+/*    border-bottom: 1px solid #ccc;*/
+/*    font-weight: 700;*/
+/*    font-size: 1.4rem;*/
+/*    color: #56585C;*/
+/*}*/
+
+/*.skills .skills_container .skills_box .skills_box_des{*/
+/*    display:flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-around;*/
+/*}*/
+.skills{
+    height: 100%;
+    width: 100%;
+    margin:0 auto;
+    text-align: center;
+    padding-bottom:5rem;
+    background: rgb(231, 230, 230);
+
+}
+/*.skills_heeding{*/
+/*    font-family: 'Noto Sans KR', sans-serif;*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    font-size: 2.4em;*/
+/*    font-weight:400;*/
+/*    margin:30px 0;*/
+
+/*}*/
+/*.skills_heeding::after{*/
+/*    position: absolute;*/
+/*    content: "";*/
+/*    top:100%;*/
+/*    height:2px;*/
+/*    width: 30px;*/
+/*    left: 0;*/
+/*    right: 70%;*/
+/*    margin:0 auto;*/
+/*    background:rgb(253, 198, 198);*/
+/*}*/
+.skills_title{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.skills_image_container{
+    text-align: center;
+    display: inline-block;
+    width:114px;
+    height:116px;
+    border-radius: 30px 30px;
+
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin-right: 2rem;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,.2), 0 3px 6px rgba(0,0,0,.2);
+}
+.skills_level{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:black;
+    border-radius: 30px 30px;
+    width: 100px;
+    height:100px;
+    padding:10px;
+    opacity: 0.8;
+    font-weight: 400;
+    font-size: 2.0rem;
+    color: white;
+    visibility: hidden;
+}
+
+.skills_image_container:hover .skills_level{
+    visibility:visible;
+    animation: fadeout1 0.5s;
+    -moz-animation: fadeout1 0.5s; /* Firefox */
+    -webkit-animation: fadeout1 0.5s; /* Safari and Chrome */
+    -o-animation:fadeout1 0.5s; /* Opera */
+
+}
+@keyframes fadeout1 {
+     0%{
+         opacity: 0;
+     }
+
+     100% {
+         opacity:0.8;
+     }
+ }
+@-moz-keyframes fadeout1 { /* Firefox */
+    0%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity:0.8;
+    }
+}
+@-webkit-keyframes fadeout1 { /* Safari and Chrome */
+    0%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity:0.8;
+    }
+}
+@-o-keyframes fadeout1 { /* Opera */
+    0%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity:0.8;
+    }
+}
+
+@media (max-width: 576px){
+    .skills_image_container{
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+    }
+    .skills_level{
+        width: 84px;
+        height: 84px;
+    }
+}
+
+
+
+.archive {
+    position: relative;
+    margin:0 auto 0;
+    width: 100%;
+    /* max-width: 71.25rem; */
+    padding: 4rem auto;
+    /*margin: 2 0 0 auto;*/
+    height: 35rem;
+    background-color: #333;
+}
+
+.archive .archive_title{
+    font-family: Black Han Sans,sans-serif;
+    color: #fff;
+    padding: 45px 0 30px 0 ;
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+    word-break: kiip-all;
+    border-bottom: .01rem solid #fff;
+
+}
+
+.archive .archive_containor{
+    display:flex;
+    flex-flow: column wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: Noto Sans KR,sans-serif;
+}
+
+.archive .archive_containor .archive_box{
+    flex-shrink: 0;
+    width: 24rem;
+    padding: 1.5rem;
+    margin: 20px;
+    border-radius: 0.7rem;
+    background-color: #fff;
+    margin-bottom: 0;
+    box-shadow: 1rem 1rem 1rem 0 rgb(255 255 255   / 20%);
+}
+
+.archive .archive_containor .archive_box .archive_box_title{
+    padding-bottom: .5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ccc;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #56585C;
+}
+
+.archive .archive_containor .archive_box .archive_box_des {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.archive .archive_containor .archive_box .archive_box_des a{
+    color:#529AC7;
+}
+
+.archive .archive_containor .archive_box .archive_box_des ul{
+    list-style-type: disc;
+}
+.archive .archive_containor .archive_box .archive_box_des li{
+    list-style-position: inside;
+    text-indent: -20px;
+    padding-left:20px;
+}
+
+
+.projects {
+    position: relative;
+    margin:0 auto 0;
+    width: 100%;
+    /* max-width: 71.25rem; */
+    padding: 4rem auto;
+    /*margin: 2 0 0 auto;*/
+    height: auto;
+    background-color: #FF9D1B;
+}
+
+.projects .project_title{
+    font-family: Black Han Sans,sans-serif;
+    color: #fff;
+    padding: 45px 0 30px 0 ;
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+    word-break: kiip-all;
+    border-bottom: .01rem solid #fff;
+}
+
+.projects .project_containor {
+    display:flex;
+    flex-flow: column wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: Noto Sans KR,sans-serif;
+}
+
+.projects .project_containor .project_box{
+
+    flex-shrink: 0;
+    width: 70%;
+    padding: 1.5rem;
+    margin: 35px;
+    border-radius: 0.7rem;
+    background-color: #fff;
+    margin-bottom: 0;
+    box-shadow: 1rem 1rem 1rem 0 rgb(255 255 255   / 0%);
+}
+
+.projects .project_containor .project_box .project_box_title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.0rem;
+    color: #56585C;
+}
+
+.projects .project_containor .project_box .project_box_subtitle{
+    text-align: center;
+    padding-bottom: .5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ccc;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #9CA0A8;
+    padding-top: 10px;
+}
+
+.projects .project_containor .project_box .project_box_des{
+    display:flex;
+    flex-flow: column wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.projects .project_containor .project_box .project_box_des_left {
+    width: 45%;
+}
+.projects .project_containor .project_box .project_box_des_left img{
+    width: 300px;
+
+}
+
+.projects .project_containor .project_box .project_box_des_right {
+    width: 45%;
+    height: auto;
+}
+
+.projects .project_containor .project_box .project_box_des_right .project_box_des_right_info{
+    border-top: 1px solid #9CA0A8;
+}
+
+.projects .project_containor .project_box .project_box_des_right .project_box_des_right_info .info_key{
+    display: inline-block;
+    vertical-align: top;
+    width: 6.4rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+.projects .project_containor .project_box .project_box_des_right .project_box_des_right_info .info_value{
+    display: inline-block;
+    vertical-align: bottom;
+    width: calc(100% - 8.4rem);
+    font-weight: 400;
+    font-size: 1rem;
+}
+.projects .project_containor .project_box .project_box_des_right .project_box_des_right_info .info_value a{
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: inherit; /* 링크의 색상 제거 */
+}
+
+
+
+
+.history {
+    position: relative;
+    margin:0 auto 0;
+    width: 100%;
+    /* max-width: 71.25rem; */
+    padding: 4rem auto;
+    /*margin: 2 0 0 auto;*/
+    height: auto;
+    background-color: #BDE7FC;
+}
+
+.history .history_title{
+    font-family: Black Han Sans,sans-serif;
+    color: #fff;
+    padding: 45px 0 30px 0 ;
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+    word-break: kiip-all;
+    border-bottom: .01rem solid #fff;
+}
+
+.history .history_containor{
+}
+
+.history .history_containor .history_box{
+    padding-top: 30px;
+    display:flex;
+    flex-flow: column wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: Noto Sans KR,sans-serif;
+}
+
+.history .history_containor .history_leftside{
+    border-right: #c2c2c2 solid 1px;
+    padding-right: 0rem;
+    border-right: 1px ;
+    width:15%
+
+}
+
+.history .history_containor .history_leftside .profile_logo{
+    overflow: hidden;
+    width: 15rem;
+    height: 15rem;
+    border: 1px solid #ccc;
+    border-radius: 4rem;
+}
+
+.history .history_containor .history_rightside{
+    border-left: #c2c2c2 solid 1px;
+    padding-left: 20px;
+    width:50%
+}
+
+.history .history_containor .history_rightside .history_right_title{
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.history .history_containor .history_rightside .history_right_subtitle{
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #9CA0A8;
+    padding-bottom: 1rem;
+}
+
+.history .history_containor .history_rightside .history_right_des{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+footer {
+    background-color: #333;
+    height: 8rem;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+footer .footer_icons{
+    margin: 0 0 1rem 0 ;
+}
+footer .footer_icons .footer_icon{
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    padding: 2px;
+    margin: 0.5rem;
+    border-radius: 2rem;
+    cursor:pointer;
+}
