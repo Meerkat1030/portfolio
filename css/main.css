@@ -164,6 +164,8 @@ header {
     top: 0;
     z-index: 9;
     box-shadow: 10px 5px 5px 5px rgba(255, 255, 255, .2);
+
+
 }
 
 header.moved {
@@ -177,6 +179,7 @@ header.moved {
 
 header > .inner {
     height: 100px;
+    width: 100%;
     margin: auto;
 }
 
@@ -272,13 +275,17 @@ header .sub-menu ul.menu li a.moved:hover {
     margin: 0 auto;
     text-align: center;
     width: 100%;
+    height: 1000px;
     outline: 2px solid orange;
+    padding: 4rem;
+
+
 }
 
 .summary img {
     position: absolute;
-    width: 350px;
-    height: 350px;
+    width: 200px;
+    height: 200px;
     border-radius: 70%;
     top: 150px
 }
@@ -309,7 +316,7 @@ header .sub-menu ul.menu li a.moved:hover {
     white-space: pre;
     line-height: 1;
     letter-spacing: 0.1rem;
-    margin-top: 300px;
+    margin-top: 360px;
     width: 25ch;
     /* ch : 25개의 문자열을 포함 */
     animation: typing 2s steps(20), blink .5s step-end infinite alternate;
@@ -335,7 +342,7 @@ header .sub-menu ul.menu li a.moved:hover {
 .aboutme {
     position: relative;
     background-color: #fff;
-    margin: 0 auto 2rem;
+    /*margin: 0 auto 0;*/
     width: 100%;
     padding: 4rem;
 }
@@ -403,6 +410,7 @@ header .sub-menu ul.menu li a.moved:hover {
     font-size: 3rem;
     text-align: center;
     border-bottom: .01rem solid #fff;
+
 }
 
 .skills {
@@ -410,8 +418,10 @@ header .sub-menu ul.menu li a.moved:hover {
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 5rem;
+    /*padding-bottom: 5rem;*/
     background: #FDD657;
+    position: relative;
+    padding: 4rem;
 }
 
 .skills_title {
@@ -631,7 +641,7 @@ header .sub-menu ul.menu li a.moved:hover {
     margin: 35px;
     border-radius: 0.7rem;
     background-color: #fff;
-    margin-bottom: 0;
+    /*margin-bottom: 0;*/
     box-shadow: 1rem 1rem 1rem 0 rgb(255 255 255   / 0%);
     border: 1px solid #000;
 }
@@ -793,10 +803,12 @@ footer {
 }
 
 footer .footer_icons {
+    background-color: #333;
     margin: 0 0 1rem 0;
 }
 
 footer .footer_icons .footer_icon {
+    background-color: #333;
     position: relative;
     display: inline-block;
     width: 3rem;
