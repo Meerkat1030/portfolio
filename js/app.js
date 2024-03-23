@@ -61,7 +61,7 @@ projectsEl.addEventListener('click', () => {
 
 historyEl.addEventListener('click', () => {
     gsap.to(window, .8, {
-        scrollTo: 4143
+        scrollTo: 6900
         // scrollTo:"#history_section"
     });
 });
@@ -97,3 +97,15 @@ function agree_click(item) {
     }
 }
 //project에서 완성도 상태에 따른 alert창을 Swal로 구현
+
+function showModal(imgElement) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+}
+
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
+// 이미지 클릭시 확대

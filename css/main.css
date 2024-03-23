@@ -663,6 +663,14 @@ header .sub-menu ul.menu li a.moved:hover {
     color: #9CA0A8;
     padding-top: 10px;
 }
+.project_box_des_left_whereOTT {
+    display: flex;
+}
+
+.project_box_des_left_whereOTT img {
+    width: 50%; /* 각 이미지의 너비를 50%로 설정하여 두 개의 이미지를 동일한 줄에 가로로 배치 */
+}
+
 
 .projects .project_containor .project_box .project_box_des {
     display: flex;
@@ -819,3 +827,45 @@ footer .footer_icons .footer_icon {
     cursor: pointer;
 }
 /* footer end */
+
+/* modal */
+/* 이미지 클릭시 확대 CSS*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 150%;
+    max-width: 1000px;
+    padding-top: 100px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* modal end*/
