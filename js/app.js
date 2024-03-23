@@ -20,14 +20,14 @@ toTopEl.addEventListener('click', function () {
 seemoreEl.addEventListener('click', () => {
     gsap.to(window, .8, {
         // scrollTo:"#aboutMe_section"
-        scrollTo: 800
+        scrollTo: 830
     });
 });
 // 더알아보기 버튼 작동
 
 aboutMeEl.addEventListener('click', () => {
     gsap.to(window, .8, {
-        scrollTo: 800
+        scrollTo: 830
         // scrollTo:"#aboutMe_section"
     });
 });
@@ -35,7 +35,7 @@ aboutMeEl.addEventListener('click', () => {
 
 skillsEl.addEventListener('click', () => {
     gsap.to(window, .8, {
-        scrollTo: 1225
+        scrollTo: 1255
         // scrollTo:"#skills_section"
     });
 });
@@ -44,7 +44,7 @@ skillsEl.addEventListener('click', () => {
 
 archiveEl.addEventListener('click', () => {
     gsap.to(window, .8, {
-        scrollTo: 2187
+        scrollTo: 3006
         // scrollTo:"#archive_section"
     });
 });
@@ -53,7 +53,7 @@ archiveEl.addEventListener('click', () => {
 projectsEl.addEventListener('click', () => {
     gsap.to(window, .8, {
         // scrollTo:"#projects_section"
-        scrollTo: 2875
+        scrollTo: 3700
     });
     console.log('클릭');
 });
