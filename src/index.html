@@ -104,13 +104,13 @@
                     <div class="info_title">SNS</div>
                     <div class="info_des">
                         <i class="fa-brands fa-instagram fa-xl" style="color: #b32999;"></i>
-                        <a href="https://www.instagram.com/meer_._kat/">meer_._kat</a></div>
+                        <a href="https://www.instagram.com/meer_._kat/" target="_blank">meer_._kat</a></div>
                 </div>
                 <div class="info_wraper">
                     <div class="info_title">Github</div>
                     <div class="info_des">
                         <i class="fa-brands fa-github fa-xl"></i>
-                        <a href="https://github.com/Meerkat1030">meerkat1030</a></div>
+                        <a href="https://github.com/Meerkat1030" target="_blank">meerkat1030</a></div>
                 </div>
 
             </div>
@@ -209,7 +209,7 @@
             <div class="skill_box">
                 <div class="skills_image_container" style="background-image: url(../img/Kotlin.jpg)">
                     <div class="skills_level">
-                        Kotlin
+                        Kotlin<br><br>중
                     </div>
                 </div>
             </div>
@@ -336,13 +336,13 @@
                                     alt=""
                                     src="../img/whereOTT_Project_1.png"
                                     width="50%"
-                                    onclick="showModal(this)"
+                                    onclick="showModalOTT(this)"
                             />
                             <img
                                     alt=""
                                     src="../img/whereOTT_Project_2.png"
                                     width="50%"
-                                    onclick="showModal(this)"
+                                    onclick="showModalOTT(this)"
                             />
                         </div>
                         <div class="project_box_des_right">
@@ -392,20 +392,36 @@
                     <div class="project_box_title">SpringBoot Board Project(1인)</div>
                     <div class="project_box_subtitle">2024-01-24 ~ 2024-01-30</div>
                     <div class="project_box_des">
+<!--                        <div class="project_box_des_left">-->
+<!--                            <img-->
+<!--                                    alt=""-->
+<!--                                    src="../img/SpringBootBoard_Project_1.png"-->
+<!--                                    width="100%"-->
+<!--                                    onclick="showModal(this)"-->
+<!--                            />-->
+<!--                            <img-->
+<!--                                    alt=""-->
+<!--                                    src="../img/SpringBootBoard_Project_2.png"-->
+<!--                                    width="100%"-->
+<!--                                    onclick="showModal(this)"-->
+<!--                            />-->
+<!--                        </div>-->
                         <div class="project_box_des_left">
-                            <img
-                                    alt=""
-                                    src="../img/SpringBootBoard_Project_1.png"
-                                    width="100%"
-                                    onclick="showModal(this)"
-                            />
-                            <img
-                                    alt=""
-                                    src="../img/SpringBootBoard_Project_2.png"
-                                    width="100%"
-                                    onclick="showModal(this)"
-                            />
-                        </div>
+                                                        <div class="slideshow-container">
+                                                            <div class="slide-wrapper">
+                                                                <img class="mySlides" alt="" src="../img/SpringBootBoard_Project_1.png" style="width:100%; display:block;" onclick="showModal(this)" />
+                                                                <img class="mySlides" alt="" src="../img/SpringBootBoard_Project_2.png" style="width:100%; display:none;" onclick="showModal(this)" />
+                                                                <!-- 좌우 버튼 -->
+                                                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                                            </div>
+                                                            <!-- 이미지 번호 표시를 위한 점 -->
+                                                            <div style="text-align:center">
+                                                                <span class="dot" onclick="currentSlide(1)"></span>
+                                                                <span class="dot" onclick="currentSlide(2)"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                         <div class="project_box_des_right">
                             <p>SpringBoot 연습용 웹페이지</p>
                             <br/>

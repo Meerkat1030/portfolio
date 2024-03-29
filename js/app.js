@@ -109,3 +109,90 @@ function closeModal() {
     document.getElementById("myModal").style.display = "none";
 }
 // 이미지 클릭시 확대
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+    showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
+function showModal(imgElement) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+}
+
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
+
+// 모달 내 이미지 슬라이드
+var modalSlideIndex = 1;
+showSlidesModal(modalSlideIndex);
+
+function plusSlidesModal(n) {
+    showSlidesModal((modalSlideIndex += n));
+}
+
+function currentSlideModal(n) {
+    showSlidesModal((modalSlideIndex = n));
+}
+
+function showSlidesModal(n) {
+    var i;
+    var slides = document.getElementsByClassName("modal-content");
+    var dots = document.getElementsByClassName("modal-dot");
+    if (n > slides.length) {
+        modalSlideIndex = 1;
+    }
+    if (n < 1) {
+        modalSlideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[modalSlideIndex - 1].style.display = "block";
+    dots[modalSlideIndex - 1].className += " active";
+}
+
+function showModalOTT(imgElement) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    var imageUrl = imgElement.src;
+
+    modal.style.display = "block";
+    modalImg.src = imageUrl;
+
+    // 이미지 요소의 크기를 지정
+    modalImg.style.width = "400px";
+    modalImg.style.height = "700px";
+}
