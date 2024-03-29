@@ -1,3 +1,32 @@
+// 이미지 갯수에 따라 점을 생성하는 함수
+function addDots() {
+    // 각 슬라이드 클래스마다 점을 추가합니다.
+    for (var i = 0; i < 5; i++) {
+        var slides = document.getElementsByClassName("mySlides" + (i + 1));
+        var dotsContainer = document.querySelector(".slideshow-container .dot-container" + (i + 1));
+
+        for (var j = 0; j < slides.length; j++) {
+            var dot = document.createElement("span");
+            dot.classList.add("dot");
+            // 클릭 이벤트를 수정하여 올바른 slideClassName과 이미지 인덱스 값을 전달합니다.
+            dot.setAttribute("onclick", "currentSlide(" + (j + 1) + ", 'mySlides" + (i + 1) + "')");
+            dotsContainer.appendChild(dot);
+        }
+
+        // 처음 진입 시 첫 번째 점에 하이라이트 표시
+        var firstDot = dotsContainer.querySelector(".dot");
+        if (firstDot) {
+            firstDot.classList.add("active");
+        }
+    }
+}
+
+
+
+// 슬라이드 초기화 시에 점을 생성
+window.onload = function() {
+    addDots();
+};
 const toTopEl = document.querySelector('#to_top');
 const aboutMeEl = document.querySelector('#aboutMe');
 const skillsEl = document.querySelector('#skills');
@@ -61,7 +90,7 @@ projectsEl.addEventListener('click', () => {
 
 historyEl.addEventListener('click', () => {
     gsap.to(window, .8, {
-        scrollTo: 6900
+        scrollTo: 6750
         // scrollTo:"#history_section"
     });
 });
@@ -98,90 +127,23 @@ function agree_click(item) {
 }
 //project에서 완성도 상태에 따른 alert창을 Swal로 구현
 
-function showModal(imgElement) {
-    var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("img01");
-    modal.style.display = "block";
-    modalImg.src = imgElement.src;
-}
-
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-}
 // 이미지 클릭시 확대
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-    showSlides((slideIndex += n));
-}
-
-function currentSlide(n) {
-    showSlides((slideIndex = n));
-}
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
-
 function showModal(imgElement) {
     var modal = document.getElementById("myModal");
     var modalImg = document.getElementById("img01");
+    var imageUrl = imgElement.src;
+
     modal.style.display = "block";
-    modalImg.src = imgElement.src;
+    modalImg.src = imageUrl;
+
+    // 이미지 요소의 크기를 지정
+    modalImg.style.width = "900px";
+    modalImg.style.height = "600px";
 }
+
 
 function closeModal() {
     document.getElementById("myModal").style.display = "none";
-}
-
-// 모달 내 이미지 슬라이드
-var modalSlideIndex = 1;
-showSlidesModal(modalSlideIndex);
-
-function plusSlidesModal(n) {
-    showSlidesModal((modalSlideIndex += n));
-}
-
-function currentSlideModal(n) {
-    showSlidesModal((modalSlideIndex = n));
-}
-
-function showSlidesModal(n) {
-    var i;
-    var slides = document.getElementsByClassName("modal-content");
-    var dots = document.getElementsByClassName("modal-dot");
-    if (n > slides.length) {
-        modalSlideIndex = 1;
-    }
-    if (n < 1) {
-        modalSlideIndex = slides.length;
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[modalSlideIndex - 1].style.display = "block";
-    dots[modalSlideIndex - 1].className += " active";
 }
 
 function showModalOTT(imgElement) {
@@ -195,4 +157,72 @@ function showModalOTT(imgElement) {
     // 이미지 요소의 크기를 지정
     modalImg.style.width = "400px";
     modalImg.style.height = "700px";
+}
+
+
+// ESC 키를 눌렀을 때 모달 닫기
+document.addEventListener("keydown", function(event) {
+    var modal = document.getElementById("myModal");
+    if (event.key === "Escape" && modal.style.display === "block") {
+        closeModal();
+    }
+});
+
+// 각 슬라이드 쇼의 인덱스 변수 선언 및 maxSlides 배열 초기화
+var slideIndexes = [1, 1, 1, 1, 1];
+var maxSlides = [];
+
+// 이미지 수를 기준으로 maxSlides 배열 초기화
+for (var i = 1; i <= 5; i++) {
+    var slides = document.getElementsByClassName('mySlides' + i);
+    maxSlides.push(slides.length);
+}
+
+// 각 슬라이드 쇼의 초기화 함수 호출
+for (var i = 0; i < slideIndexes.length; i++) {
+    showSlides(slideIndexes[i], 'mySlides' + (i + 1));
+}
+
+// 슬라이드 쇼 전환 함수들
+function plusSlides(n, slideClassName) {
+    var slideIndex = slideIndexes[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1];
+    var maxIndex = maxSlides[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1];
+    slideIndex += n;
+    if (slideIndex > maxIndex) slideIndex = 1;
+    if (slideIndex < 1) slideIndex = maxIndex;
+    slideIndexes[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1] = slideIndex;
+    showSlides(slideIndex, slideClassName);
+    console.log(slideIndex, slideClassName);
+}
+
+function currentSlide(n, slideClassName) {
+    var slideIndex = slideIndexes[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1];
+    var maxIndex = maxSlides[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1];
+    slideIndex -= n;
+    if (slideIndex > maxIndex) slideIndex = maxIndex;
+    if (slideIndex < 1) slideIndex = maxIndex;
+    slideIndexes[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1] = slideIndex;
+    showSlides(slideIndex, slideClassName);
+}
+
+function showSlides(n, slideClassName) {
+    var slides = document.getElementsByClassName(slideClassName);
+    if (n > slides.length) { n = 1; }
+    if (n < 1) { n = slides.length; }
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[n - 1].style.display = "block";
+
+    // 해당 슬라이드에 대한 점들을 모두 비활성화
+    var dots = document.querySelectorAll(".slideshow-container .dot-container" + slideClassName.slice(-1) + " .dot");
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    // 현재 슬라이드에 대한 점 활성화
+    var activeDot = document.querySelector(".slideshow-container .dot-container" + slideClassName.slice(-1) + " .dot:nth-child(" + n + ")");
+    if (activeDot) {
+        activeDot.classList.add("active");
+    }
 }
