@@ -9,7 +9,8 @@ function addDots() {
             var dot = document.createElement("span");
             dot.classList.add("dot");
             // 클릭 이벤트를 수정하여 올바른 slideClassName과 이미지 인덱스 값을 전달합니다.
-            dot.setAttribute("onclick", "currentSlide(" + (j + 1) + ", 'mySlides" + (i + 1) + "')");
+            dot.setAttribute("onclick", "currentSlide(" + (j + 1) + ", 'mySlides" + (i + 1) + "', 'slide-text" + (i + 1) + "')");
+
             dotsContainer.appendChild(dot);
         }
 
@@ -180,49 +181,52 @@ for (var i = 1; i <= 5; i++) {
 
 // 각 슬라이드 쇼의 초기화 함수 호출
 for (var i = 0; i < slideIndexes.length; i++) {
-    showSlides(slideIndexes[i], 'mySlides' + (i + 1));
+    showSlides(slideIndexes[i], 'mySlides' + (i + 1), 'slide-text' + (i + 1));
 }
 
-// 슬라이드 쇼 전환 함수들
-function plusSlides(n, slideClassName) {
+// plusSlides 함수와 currentSlide 함수에서 점의 활성화 상태를 변경하는 부분을 추가합니다.
+function plusSlides(n, slideClassName, slideTextName) {
     var slideIndex = slideIndexes[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1];
     var maxIndex = maxSlides[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1];
     slideIndex += n;
     if (slideIndex > maxIndex) slideIndex = 1;
     if (slideIndex < 1) slideIndex = maxIndex;
     slideIndexes[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1] = slideIndex;
-    showSlides(slideIndex, slideClassName);
-    console.log(slideIndex, slideClassName);
+    showSlides(slideIndex, slideClassName, slideTextName);
+    // 현재 선택된 점 표시를 변경
+    var dots = document.querySelectorAll(".dot-container" + (parseInt(slideClassName.charAt(slideClassName.length - 1))) + " .dot");
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+    dots[slideIndex - 1].classList.add("active");
 }
 
-function currentSlide(n, slideClassName) {
+function currentSlide(n, slideClassName, slideTextName) {
     var slideIndex = slideIndexes[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1];
     var maxIndex = maxSlides[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1];
     slideIndex -= n;
     if (slideIndex > maxIndex) slideIndex = maxIndex;
     if (slideIndex < 1) slideIndex = maxIndex;
     slideIndexes[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1] = slideIndex;
-    showSlides(slideIndex, slideClassName);
+    showSlides(slideIndex, slideClassName, slideTextName);
+    // 현재 선택된 점 표시를 변경
+    var dots = document.querySelectorAll(".dot-container" + (parseInt(slideClassName.charAt(slideClassName.length - 1))) + " .dot");
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+    dots[slideIndex - 1].classList.add("active");
 }
 
-function showSlides(n, slideClassName) {
+
+function showSlides(n, slideClassName, slideTextName) {
     var slides = document.getElementsByClassName(slideClassName);
+    var slideTexts = document.getElementsByClassName(slideTextName);
     if (n > slides.length) { n = 1; }
     if (n < 1) { n = slides.length; }
     for (var i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
+        slideTexts[i].style.display = "none";
     }
     slides[n - 1].style.display = "block";
-
-    // 해당 슬라이드에 대한 점들을 모두 비활성화
-    var dots = document.querySelectorAll(".slideshow-container .dot-container" + slideClassName.slice(-1) + " .dot");
-    for (var i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active");
-    }
-
-    // 현재 슬라이드에 대한 점 활성화
-    var activeDot = document.querySelector(".slideshow-container .dot-container" + slideClassName.slice(-1) + " .dot:nth-child(" + n + ")");
-    if (activeDot) {
-        activeDot.classList.add("active");
-    }
+    slideTexts[n - 1].style.display = "block";
 }
