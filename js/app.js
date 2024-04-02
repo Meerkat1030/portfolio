@@ -9,7 +9,7 @@ function addDots() {
             var dot = document.createElement("span");
             dot.classList.add("dot");
             // 클릭 이벤트를 수정하여 올바른 slideClassName과 이미지 인덱스 값을 전달합니다.
-            dot.setAttribute("onclick", "currentSlide(" + (j + 1) + ", 'mySlides" + (i + 1) + "', 'slide-text" + (i + 1) + "')");
+            dot.setAttribute("onclick", "showSlides(" + (j + 1) + ", 'mySlides" + (i + 1) + "', 'slide-text" + (i + 1) + "')");
 
             dotsContainer.appendChild(dot);
         }
@@ -209,12 +209,7 @@ function currentSlide(n, slideClassName, slideTextName) {
     if (slideIndex < 1) slideIndex = maxIndex;
     slideIndexes[parseInt(slideClassName.charAt(slideClassName.length - 1)) - 1] = slideIndex;
     showSlides(slideIndex, slideClassName, slideTextName);
-    // 현재 선택된 점 표시를 변경
-    var dots = document.querySelectorAll(".dot-container" + (parseInt(slideClassName.charAt(slideClassName.length - 1))) + " .dot");
-    for (var i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active");
-    }
-    dots[slideIndex - 1].classList.add("active");
+
 }
 
 
@@ -229,4 +224,9 @@ function showSlides(n, slideClassName, slideTextName) {
     }
     slides[n - 1].style.display = "block";
     slideTexts[n - 1].style.display = "block";
+    var dots = document.querySelectorAll(".dot-container" + (parseInt(slideClassName.charAt(slideClassName.length - 1))) + " .dot");
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+    dots[n-1].classList.add("active");
 }
