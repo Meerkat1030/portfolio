@@ -91,7 +91,7 @@ projectsEl.addEventListener('click', () => {
 
 historyEl.addEventListener('click', () => {
     gsap.to(window, .8, {
-        scrollTo: 6750
+        scrollTo: 7320
         // scrollTo:"#history_section"
     });
 });
