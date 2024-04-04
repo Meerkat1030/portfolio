@@ -394,12 +394,35 @@ header .sub-menu ul.menu li a.moved:hover {
 
 .aboutme .aboutme_description .aboutme_infos .info_wraper .info_des a {
     text-decoration: none; /* 링크의 밑줄 제거 */
-    color: inherit; /* 링크의 색상 제거 */
+    /*color: inherit; !* 링크의 색상 제거 *!*/
 }
 
 .aboutme .aboutme_description .aboutme_infos .info_wraper .info_des i {
     padding: 14px 10px 0 0;
 }
+
+.info_des a {
+    font-size: 16px; /* 글자 크기 */
+    font-weight: bold; /* 굵게 */
+    text-decoration: underline; /* 밑줄 추가 */
+}
+.aboutme-text {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #444444;
+    font-size: 16px; /* 글자 크기 */
+    border-radius: 5px;
+    color: #ffffff;
+    display: none;
+    text-align: center;
+    position: absolute;
+}
+
+.info_des a:hover + .aboutme-text{
+    /*color: red; !* 호버 시 추가 문구의 색상 변경 *!*/
+    display: block;
+}
+
 /* aboutme end */
 
 /*skills*/
@@ -599,6 +622,26 @@ header .sub-menu ul.menu li a.moved:hover {
 .textmiddle {
     vertical-align: super;
 }
+.archive-text {
+    margin-top: 5px;
+    padding: 10px 15px;
+    background-color: #444444;
+    font-size: 16px; /* 글자 크기 */
+    border-radius: 5px;
+    color: #ffffff;
+    display: none;
+    text-align: center;
+}
+.archive_box_des a {
+    font-size: 16px; /* 글자 크기 */
+    font-weight: bold; /* 굵게 */
+    text-decoration: underline; /* 밑줄 추가 */
+}
+
+.archive_box_des a:hover + .archive-text{
+    /*color: red; !* 호버 시 추가 문구의 색상 변경 *!*/
+    display: block;
+}
 /* archive end */
 
 /* projects */
@@ -714,14 +757,31 @@ header .sub-menu ul.menu li a.moved:hover {
     font-size: 1rem;
 }
 
-.projects .project_containor .project_box .project_box_des_right .project_box_des_right_info .info_value a {
-    text-decoration: none; /* 링크의 밑줄 제거 */
-    color: inherit; /* 링크의 색상 제거 */
+.info-text {
+    margin-top: 5px;
+    padding: 10px 15px;
+    background-color: #444444;
+    font-size: 16px; /* 글자 크기 */
+    border-radius: 5px;
+    color: #ffffff;
+    display: none;
+    text-align: center;
+}
+.info_value a {
+    font-size: 16px; /* 글자 크기 */
+    font-weight: bold; /* 굵게 */
+    text-decoration: underline; /* 밑줄 추가 */
+}
+.info_value a:hover + .info-text{
+    /*color: red; !* 호버 시 추가 문구의 색상 변경 *!*/
+    display: block;
 }
 
 .slide-container {
     text-align: center;
 }
+
+
 /* project end */
 
 /* history */
