@@ -27,10 +27,6 @@ function addDots() {
 // 슬라이드 초기화 시에 점을 생성
 window.onload = function() {
     addDots();
-};
-
-$(document).ready(function () {
-    // form submit
     $("#contact-form").on("submit", function (event) {
         event.preventDefault();
 
@@ -56,7 +52,12 @@ $(document).ready(function () {
                 alert("Oops... " + JSON.stringify(error));
             });
     });
-});
+};
+
+// $(document).ready(function () {
+//     // form submit
+//
+// });
 const toTopEl = document.querySelector('#to_top');
 const aboutMeEl = document.querySelector('#aboutMe');
 const skillsEl = document.querySelector('#skills');
