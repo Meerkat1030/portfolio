@@ -1056,3 +1056,19 @@ footer .footer_icons .footer_icon {
 }
 /* contact end */
 
+
+/* modal */
+/* 모달 스타일 */
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.5); /* 배경색 및 투명도 조절 */
+    color: white; /* 글자색 흰색으로 설정 */
+    margin-top: 50px;
+}
+.modal-body {
+    font-size: 20px; /* 폰트 크기 20px로 설정 */
+}
+.modal-dialog {
+    margin: 0 auto; /* 모달을 수평 가운데 정렬 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+/* modal end*/

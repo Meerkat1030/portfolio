@@ -29,6 +29,7 @@ window.onload = function() {
     addDots();
     $("#contact-form").on("submit", function (event) {
         event.preventDefault();
+        showLoading();
 
         // formData 넣어주고
         const formData = new FormData(this);
@@ -47,12 +48,25 @@ window.onload = function() {
         })
             .done(function () {
                 alert('성공');
+                hideLoading();
             })
             .fail(function (error) {
+                hideLoading();
                 alert("Oops... " + JSON.stringify(error));
             });
     });
 };
+function showLoading() {
+    // 모달 창을 표시
+    console.log("showLoading");
+    $('#loadingModal').modal('show');
+}
+
+function hideLoading() {
+    // 모달 창을 숨김
+    console.log("hideLoading");
+    $('#loadingModal').modal('hide');
+}
 
 // $(document).ready(function () {
 //     // form submit
