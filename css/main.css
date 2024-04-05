@@ -974,3 +974,85 @@ footer .footer_icons .footer_icon {
     background-color: #717171;
 }
 /* photo slide end */
+
+/* contact */
+.contact {
+    position: relative;
+    margin: 0 auto;
+    width: 800px; /* 가로 너비 설정 */
+    height: 870px; /* 세로 높이 설정 */
+    overflow: auto; /* 내용이 넘치는 경우 스크롤 표시 */
+    padding: 20px; /* 내부 여백 설정 */
+    background-color: #fff;
+    box-sizing: border-box; /* padding과 border가 요소의 크기에 포함되도록 설정 */
+}
+.contact_title {
+    font-family: Black Han Sans, sans-serif;
+    color: #000;
+    padding: 45px 0 30px 0;
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+    word-break: keep-all;
+    border-bottom: .01rem solid #000;
+
+}
+.contact form {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.contact .form-floating {
+    margin-bottom: 1.5rem;
+}
+
+.contact .form-floating input,
+.contact .form-floating textarea {
+    width: calc(100% - 2rem); /* 수평 패딩 고려하여 너비 설정 */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.contact .form-floating p {
+    padding: 0 0.5rem;
+    margin-bottom: 10px; /* label과 input 사이의 간격 조정 */
+}
+
+.contact .invalid-feedback {
+    display: none;
+    color: red;
+}
+
+.contact .form-control.is-invalid,
+.contact .form-control:invalid {
+    border-color: red;
+}
+
+.contact .d-grid {
+    margin-top: 1.5rem;
+}
+
+.contact .btn {
+    width: 130px;
+    padding: 10px;
+    border: 2px solid #fff;
+    background-color: #FDD657;
+    border-radius: 7rem;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    transition: .4s;
+}
+
+.contact .btn:hover {
+    background-color: #fff;
+    color: #529AC7;
+}
+/* contact end */
+

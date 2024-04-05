@@ -48,6 +48,9 @@
                 <li id="history">
                     <a href="javascript:void(0)">History</a>
                 </li>
+                <li id="contact">
+                    <a href="javascript:void(0)">Contact</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -742,6 +745,10 @@
                                     <div class="slide-text2" style="display: none;">
                                         <p>History 부분입니다.</p>
                                     </div>
+                                    <img class="mySlides2" alt="" src="../img/portfolio_project_6.png" style="width: 345px; height: 225px; display: none; margin: auto;" onclick="showModal(this)" />
+                                    <div class="slide-text2" style="display: none;">
+                                        <p>Contact 부분입니다.</p>
+                                    </div>
                                     <!-- 좌우 버튼 -->
                                     <a class="prev" onclick="currentSlide(1, 'mySlides2', 'slide-text2')">&#10094;</a>
                                     <a class="next" onclick="plusSlides(1, 'mySlides2', 'slide-text2')">&#10095;</a>
@@ -988,6 +995,36 @@
         </div>
     </div>
     </div>
+</section>
+<section class="contact" id="contact_section">
+    <div class="contact_title">Contact</div>
+    <form style="width: 100%" id="contact-form">
+        <div id="tagArea" style="padding: 0 4px"></div>
+        <div class="form-floating mb-3">
+            <p for="inputName" class="form-label">이름</p>
+            <input type="text" class="form-control" id="inputName" name="name" aria-describedby="emailHelp" placeholder="이름" />
+            <div class="invalid-feedback" data-sb-feedback="name:required">이름을 적어주세요.</div>
+        </div>
+        <div class="form-floating mb-3" style="margin-left: auto; margin-right: auto">
+            <p for="inputPhone" class="form-label">이메일 주소</p>
+            <input type="email" class="form-control" id="inputEmail" name="email" aria-describedby="emailHelp" placeholder="name@example.com" data-sb-validations="required,email" />
+            <div class="invalid-feedback" data-sb-feedback="email:required">이메일을 적어주세요.</div>
+            <div class="invalid-feedback" data-sb-feedback="email:email">이메일 형식이 맞지 않습니다.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <p for="inputEmail" class="form-label">휴대폰 번호</p>
+            <input type="text" class="form-control" id="inputPhone" name="phone" aria-describedby="emailHelp" placeholder="(123) 456-7890" data-sb-validations="required" />
+            <div class="invalid-feedback" data-sb-feedback="phone:required">번호를 적어주세요.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <p for="floatingTextarea">남길 메세지</p>
+            <textarea class="form-control" style="height: 13rem; resize: none" name="message" id="floatingTextarea" placeholder="Comments"></textarea>
+            <div class="invalid-feedback" data-sb-feedback="message:required">메세지를 남겨주세요.</div>
+        </div>
+        <div class="d-grid">
+            <button name="submit" class="btn btn-outline-success">제출</button>
+        </div>
+    </form>
 </section>
 <!-- history section end -->
 

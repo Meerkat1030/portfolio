@@ -34,6 +34,7 @@ const skillsEl = document.querySelector('#skills');
 const archiveEl = document.querySelector("#archive")
 const projectsEl = document.querySelector("#projects");
 const historyEl = document.querySelector("#history");
+const contactEl = document.querySelector("#contact");
 const seemoreEl = document.querySelector("#see_more");
 const headerEl = document.querySelector('#header');
 const headerFontEls = document.querySelectorAll('header .sub-menu ul.menu a')
@@ -96,6 +97,14 @@ historyEl.addEventListener('click', () => {
     });
 });
 //메뉴바를 통해 history로 이동
+
+contactEl.addEventListener('click', () => {
+    gsap.to(window, .8, {
+        scrollTo: 8450
+        // scrollTo:"#contact_section"
+    });
+});
+//메뉴바를 통해 contact로 이동
 
 window.addEventListener('scroll', _.throttle(
     () => {
