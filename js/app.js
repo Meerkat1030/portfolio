@@ -28,6 +28,35 @@ function addDots() {
 window.onload = function() {
     addDots();
 };
+
+$(document).ready(function () {
+    // form submit
+    $("#contact-form").on("submit", function (event) {
+        event.preventDefault();
+
+        // formData 넣어주고
+        const formData = new FormData(this);
+
+        // 파라미터 조건들 넣어줘야함
+        // ID나 Key들은 각자 다르기때문에 EmailJS에서 확인하고 기입
+        formData.append('service_id', 'service_f8mor2d');
+        formData.append('template_id', 'template_zf6mtns');
+        formData.append('user_id', 'o-5Xlm2q9a7sFBvr3');
+
+        $.ajax("https://api.emailjs.com/api/v1.0/email/send-form", {
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+        })
+            .done(function () {
+                alert('성공');
+            })
+            .fail(function (error) {
+                alert("Oops... " + JSON.stringify(error));
+            });
+    });
+});
 const toTopEl = document.querySelector('#to_top');
 const aboutMeEl = document.querySelector('#aboutMe');
 const skillsEl = document.querySelector('#skills');
