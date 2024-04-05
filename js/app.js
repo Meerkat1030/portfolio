@@ -49,6 +49,7 @@ window.onload = function() {
             .done(function () {
                 alert('성공');
                 hideLoading();
+                $("#contact-form")[0].reset();
             })
             .fail(function (error) {
                 hideLoading();
