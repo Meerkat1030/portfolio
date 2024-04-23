@@ -1,7 +1,7 @@
 // 이미지 갯수에 따라 점을 생성하는 함수
 function addDots() {
     // 각 슬라이드 클래스마다 점을 추가합니다.
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 6; i++) {
         var slides = document.getElementsByClassName("mySlides" + (i + 1));
         var dotsContainer = document.querySelector(".slideshow-container .dot-container" + (i + 1));
 
@@ -137,7 +137,7 @@ projectsEl.addEventListener('click', () => {
 
 historyEl.addEventListener('click', () => {
     gsap.to(window, .8, {
-        scrollTo: 7320
+        scrollTo: 7390
         // scrollTo:"#history_section"
     });
 });
@@ -145,7 +145,7 @@ historyEl.addEventListener('click', () => {
 
 contactEl.addEventListener('click', () => {
     gsap.to(window, .8, {
-        scrollTo: 8450
+        scrollTo: 8510
         // scrollTo:"#contact_section"
     });
 });
@@ -224,11 +224,11 @@ document.addEventListener("keydown", function(event) {
 });
 
 // 각 슬라이드 쇼의 인덱스 변수 선언 및 maxSlides 배열 초기화
-var slideIndexes = [1, 1, 1, 1, 1];
+var slideIndexes = [1, 1, 1, 1, 1, 1];
 var maxSlides = [];
 
 // 이미지 수를 기준으로 maxSlides 배열 초기화
-for (var i = 1; i <= 5; i++) {
+for (var i = 1; i <= 6; i++) {
     var slides = document.getElementsByClassName('mySlides' + i);
     maxSlides.push(slides.length);
 }
